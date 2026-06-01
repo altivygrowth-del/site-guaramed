@@ -1,1573 +1,1068 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Psicóloga Nicoly Rodrigues | CRP 08/35910 — Guaratuba e Online</title>
-<meta name="description" content="Nicoly Rodrigues, psicóloga CRP 08/35910. Atendimento presencial em Guaratuba e online. Um espaço seguro e acolhedor para você.">
- 
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Clínica Geral em Guaratuba — Atendimento Humanizado e Completo | Guaramed</title>
+<meta name="description" content="Guaramed é a clínica médica de referência em Guaratuba-PR. Consultas com Dr. Marcos Carvalho Garcia (CRM-PR 31151). Atendimento particular e Amil. Agende pelo WhatsApp."/>
+<meta property="og:title" content="Guaramed — Medicina que escuta, trata e acompanha | Guaratuba-PR"/>
+<meta property="og:description" content="Clínica médica em Guaratuba com atendimento humanizado, eletrocardiograma no local e agendamento fácil pelo WhatsApp."/>
+<meta property="og:type" content="website"/>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+
+<style>
+:root {
+  --petrol: #1E5C7A;
+  --petrol-dark: #154560;
+  --petrol-light: #2A7499;
+  --sage: #4A7C6F;
+  --bg: #FAFAF7;
+  --white: #FFFFFF;
+  --ink: #1F2937;
+  --ink-soft: #4B5563;
+  --ink-muted: #9CA3AF;
+  --border: #E5E7EB;
+  --border-soft: #F3F4F6;
+  --gold: #C9A961;
+  --green-light: #EBF4F1;
+  --petrol-10: #EAF3F8;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+  --shadow: 0 4px 16px rgba(30,92,122,.10);
+  --shadow-lg: 0 12px 40px rgba(30,92,122,.14);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── UTILITIES ── */
+.container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 88px 0; }
+.section-sm { padding: 64px 0; }
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--petrol); background: var(--petrol-10);
+  padding: 5px 12px; border-radius: 100px;
+  margin-bottom: 20px;
+}
+.tag::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--petrol); }
+h1,h2,h3,h4 { font-family: 'Fraunces', serif; line-height: 1.2; }
+h2.section-title { font-size: clamp(28px, 4vw, 42px); font-weight: 600; color: var(--ink); margin-bottom: 16px; }
+p.section-subtitle { font-size: 17px; color: var(--ink-soft); max-width: 560px; line-height: 1.65; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px; border-radius: 100px;
+  font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600;
+  text-decoration: none; cursor: pointer; border: none; transition: all .22s ease;
+}
+.btn-primary { background: var(--petrol); color: #fff; box-shadow: 0 4px 16px rgba(30,92,122,.28); }
+.btn-primary:hover { background: var(--petrol-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(30,92,122,.32); }
+.btn-outline { background: transparent; color: var(--petrol); border: 1.5px solid var(--petrol); }
+.btn-outline:hover { background: var(--petrol-10); }
+.btn-whatsapp { background: #25D366; color: #fff; box-shadow: 0 4px 16px rgba(37,211,102,.28); }
+.btn-whatsapp:hover { background: #1ebe5a; transform: translateY(-2px); }
+
+/* ── HEADER / NAV ── */
+#header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(250,250,247,.92); backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s, box-shadow .3s;
+}
+#header.scrolled { border-color: var(--border); box-shadow: var(--shadow-sm); }
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 68px;
+}
+.logo {
+  display: flex; align-items: center; gap: 12px; text-decoration: none;
+}
+.logo-mark {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--petrol); display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.logo-mark img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
+.logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+.logo-name { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; color: var(--ink); }
+.logo-sub { font-size: 11px; color: var(--ink-muted); letter-spacing: .04em; }
+nav { display: flex; align-items: center; gap: 32px; }
+nav a { text-decoration: none; font-size: 14px; font-weight: 500; color: var(--ink-soft); transition: color .2s; }
+nav a:hover { color: var(--petrol); }
+.nav-cta { margin-left: 8px; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--ink); border-radius: 2px; transition: .3s; }
+.mobile-menu {
+  display: none; flex-direction: column;
+  background: var(--white); border-top: 1px solid var(--border);
+  padding: 20px 24px; gap: 16px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a { font-size: 16px; font-weight: 500; color: var(--ink); text-decoration: none; padding: 8px 0; border-bottom: 1px solid var(--border-soft); }
+
+/* ── HERO ── */
+#hero {
+  padding-top: 68px;
+  background: var(--white);
+  position: relative; overflow: hidden;
+}
+.hero-bg-shape {
+  position: absolute; right: -80px; top: -60px;
+  width: 620px; height: 620px; border-radius: 50%;
+  background: radial-gradient(circle at 60% 40%, var(--petrol-10) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  min-height: calc(100vh - 68px); padding: 80px 0 60px;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--petrol); margin-bottom: 24px;
+}
+.hero-eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--petrol); }
+h1.hero-title {
+  font-size: clamp(36px, 5vw, 58px); font-weight: 600; line-height: 1.1;
+  color: var(--ink); margin-bottom: 22px;
+}
+h1.hero-title em { font-style: italic; color: var(--petrol); }
+.hero-desc { font-size: 17px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 36px; max-width: 500px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
+.hero-trust { display: flex; gap: 28px; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-soft); font-weight: 500; }
+.trust-item svg { color: var(--petrol); flex-shrink: 0; }
+.hero-visual {
+  position: relative; display: flex; justify-content: center; align-items: center;
+}
+.hero-card-main {
+  background: var(--white); border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg); overflow: hidden;
+  width: 100%; max-width: 420px;
+}
+.hero-card-img {
+  width: 100%; height: 320px;
+  background: linear-gradient(135deg, var(--petrol-10) 0%, #d4e8f0 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.hero-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.hero-card-placeholder {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  color: var(--petrol); opacity: .45;
+}
+.hero-card-placeholder svg { width: 64px; height: 64px; }
+.hero-card-placeholder span { font-size: 13px; font-weight: 500; }
+.hero-card-body { padding: 22px 24px; }
+.hero-card-name { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 600; color: var(--ink); }
+.hero-card-crm { font-size: 12px; color: var(--petrol); font-weight: 600; margin-top: 2px; }
+.hero-card-spec { font-size: 14px; color: var(--ink-soft); margin-top: 4px; }
+.hero-badge {
+  position: absolute; top: -12px; right: -12px;
+  background: var(--petrol); color: #fff;
+  border-radius: var(--radius); padding: 14px 18px;
+  box-shadow: var(--shadow); font-size: 12px; font-weight: 600;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  min-width: 100px; text-align: center;
+}
+.hero-badge strong { font-size: 22px; font-family: 'Fraunces', serif; }
+
+/* ── RIBBON ── */
+.ribbon {
+  background: var(--petrol); color: rgba(255,255,255,.9);
+  padding: 16px 0;
+}
+.ribbon-inner {
+  display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+}
+.ribbon-item {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; font-weight: 500;
+}
+.ribbon-item svg { opacity: .8; }
+
+/* ── ESPECIALIDADES ── */
+#especialidades { background: var(--white); }
+.spec-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;
+  margin-top: 48px;
+}
+.spec-card {
+  padding: 28px 22px; border-radius: var(--radius);
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  transition: all .22s ease; cursor: default;
+}
+.spec-card:hover { border-color: var(--petrol); box-shadow: var(--shadow); transform: translateY(-3px); }
+.spec-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--petrol-10); display: flex; align-items: center; justify-content: center;
+  margin-bottom: 16px;
+}
+.spec-icon svg { color: var(--petrol); }
+.spec-name { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+.spec-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
+
+/* ── DIFERENCIAIS ── */
+#diferenciais { background: var(--bg); }
+.diff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; }
+.diff-card {
+  background: var(--white); border-radius: var(--radius-lg);
+  padding: 32px; border: 1px solid var(--border);
+  display: flex; gap: 20px; align-items: flex-start;
+  transition: box-shadow .22s;
+}
+.diff-card:hover { box-shadow: var(--shadow); }
+.diff-num {
+  font-family: 'Fraunces', serif; font-size: 42px; font-weight: 300;
+  color: var(--petrol); opacity: .25; line-height: 1; flex-shrink: 0;
+  width: 40px;
+}
+.diff-content h3 { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 600; margin-bottom: 8px; }
+.diff-content p { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
+
+/* ── MÉDICO ── */
+#medico { background: var(--white); }
+.doctor-wrap {
+  display: grid; grid-template-columns: 360px 1fr; gap: 64px; align-items: start;
+  margin-top: 48px;
+}
+.doctor-photo-wrap { position: relative; }
+.doctor-photo {
+  width: 100%; aspect-ratio: 3/4; border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--petrol-10), #c8dfe8);
+  overflow: hidden; display: flex; align-items: center; justify-content: center;
+}
+.doctor-photo img { width: 100%; height: 100%; object-fit: cover; }
+.doctor-photo-placeholder { color: var(--petrol); opacity: .35; text-align: center; }
+.doctor-photo-placeholder svg { width: 80px; height: 80px; }
+.doctor-crm-badge {
+  position: absolute; bottom: -18px; left: 24px;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 12px 18px;
+  box-shadow: var(--shadow); font-size: 12px; font-weight: 600; color: var(--petrol);
+  display: flex; align-items: center; gap: 6px;
+}
+.doctor-info { padding-top: 8px; }
+.doctor-name { font-size: clamp(28px, 3.5vw, 40px); font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+.doctor-spec {
+  display: inline-block; background: var(--petrol-10); color: var(--petrol);
+  font-size: 13px; font-weight: 600; padding: 4px 14px; border-radius: 100px;
+  margin-bottom: 24px;
+}
+.doctor-bio { font-size: 16px; color: var(--ink-soft); line-height: 1.75; margin-bottom: 28px; }
+.doctor-attrs { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+.doctor-attr {
+  display: flex; align-items: center; gap: 12px;
+  font-size: 14px; color: var(--ink-soft);
+}
+.doctor-attr-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--petrol-10); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.doctor-attr-icon svg { color: var(--petrol); }
+
+/* ── COMO FUNCIONA ── */
+#como-funciona { background: var(--petrol); color: #fff; }
+#como-funciona .tag { color: rgba(255,255,255,.7); background: rgba(255,255,255,.1); }
+#como-funciona .tag::before { background: rgba(255,255,255,.7); }
+#como-funciona h2 { color: #fff; }
+#como-funciona .section-subtitle { color: rgba(255,255,255,.7); }
+.steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 52px; position: relative; }
+.steps-grid::before {
+  content: '';
+  position: absolute; top: 32px; left: 10%; right: 10%; height: 1px;
+  background: rgba(255,255,255,.15);
+}
+.step { text-align: center; padding: 0 16px; position: relative; }
+.step-num {
+  width: 64px; height: 64px; border-radius: 50%;
+  background: rgba(255,255,255,.12); border: 1.5px solid rgba(255,255,255,.2);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px; font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600;
+  color: #fff; position: relative; z-index: 1; transition: background .2s;
+}
+.step:hover .step-num { background: rgba(255,255,255,.2); }
+.step-icon { margin-bottom: 16px; }
+.step-title { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; margin-bottom: 8px; }
+.step-desc { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.65; }
+
+/* ── AVALIAÇÕES ── */
+#avaliacoes { background: var(--bg); }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
+.review-card {
+  background: var(--white); border-radius: var(--radius);
+  padding: 28px; border: 1px solid var(--border);
+  transition: box-shadow .22s;
+}
+.review-card:hover { box-shadow: var(--shadow); }
+.review-stars { color: #F59E0B; font-size: 16px; margin-bottom: 14px; letter-spacing: 2px; }
+.review-text { font-size: 14px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+.review-footer { display: flex; align-items: center; gap: 12px; }
+.review-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--petrol-10); display: flex; align-items: center; justify-content: center;
+  font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: var(--petrol);
+  flex-shrink: 0;
+}
+.review-name { font-size: 14px; font-weight: 600; color: var(--ink); }
+.review-date { font-size: 12px; color: var(--ink-muted); }
+.reviews-cta { text-align: center; margin-top: 36px; }
+.google-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--ink-soft); margin-top: 12px;
+}
+
+/* ── FAQ ── */
+#faq { background: var(--white); }
+.faq-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; margin-top: 48px; align-items: start; }
+.faq-left p { font-size: 16px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 28px; }
+.faq-list { display: flex; flex-direction: column; gap: 2px; }
+.faq-item {
+  border: 1px solid var(--border); border-radius: var(--radius);
+  overflow: hidden; transition: border-color .2s;
+}
+.faq-item.open { border-color: var(--petrol); }
+.faq-q {
+  padding: 18px 20px; font-size: 15px; font-weight: 500; color: var(--ink);
+  cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  background: var(--white); transition: background .2s;
+}
+.faq-q:hover { background: var(--petrol-10); }
+.faq-item.open .faq-q { background: var(--petrol-10); color: var(--petrol); }
+.faq-chevron { flex-shrink: 0; transition: transform .25s; }
+.faq-item.open .faq-chevron { transform: rotate(180deg); }
+.faq-a {
+  max-height: 0; overflow: hidden; transition: max-height .3s ease, padding .3s;
+  font-size: 14px; color: var(--ink-soft); line-height: 1.7;
+  padding: 0 20px;
+}
+.faq-item.open .faq-a { max-height: 200px; padding: 0 20px 18px; }
+
+/* ── LOCALIZAÇÃO ── */
+#localizacao { background: var(--bg); }
+.location-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; margin-top: 48px; align-items: start; }
+.location-info { display: flex; flex-direction: column; gap: 20px; }
+.loc-card {
+  background: var(--white); border-radius: var(--radius);
+  padding: 22px; border: 1px solid var(--border);
+  display: flex; gap: 16px; align-items: flex-start;
+}
+.loc-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--petrol-10); display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.loc-icon svg { color: var(--petrol); }
+.loc-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-muted); margin-bottom: 4px; }
+.loc-value { font-size: 15px; font-weight: 500; color: var(--ink); line-height: 1.5; }
+.loc-value span { display: block; }
+.map-frame {
+  border-radius: var(--radius-lg); overflow: hidden;
+  box-shadow: var(--shadow); height: 380px; background: var(--petrol-10);
+}
+.map-frame iframe { width: 100%; height: 100%; border: none; }
+
+/* ── CTA FINAL ── */
+#cta-final {
+  background: linear-gradient(135deg, var(--petrol-dark) 0%, var(--petrol-light) 100%);
+  color: #fff; text-align: center; padding: 100px 0;
+}
+#cta-final h2 { font-size: clamp(28px, 4vw, 46px); color: #fff; margin-bottom: 16px; }
+#cta-final p { font-size: 18px; color: rgba(255,255,255,.75); margin-bottom: 40px; max-width: 520px; margin-left: auto; margin-right: auto; }
+.cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-white { background: #fff; color: var(--petrol); }
+.btn-white:hover { background: var(--petrol-10); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--ink); color: rgba(255,255,255,.6);
+  padding: 48px 0 32px;
+}
+.footer-inner { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,.08); }
+.footer-brand .logo-name { color: #fff; }
+.footer-brand .logo-sub { color: rgba(255,255,255,.4); }
+.footer-brand p { font-size: 13px; margin-top: 14px; line-height: 1.65; max-width: 260px; }
+.footer-col h4 { font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: rgba(255,255,255,.4); margin-bottom: 16px; }
+.footer-col a { display: block; font-size: 14px; color: rgba(255,255,255,.6); text-decoration: none; margin-bottom: 8px; transition: color .2s; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom { padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap; gap: 12px; font-size: 12px; }
+.cfm-note { font-size: 11px; color: rgba(255,255,255,.3); max-width: 480px; line-height: 1.6; }
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float {
+  position: fixed; bottom: 28px; right: 28px; z-index: 200;
+  background: #25D366; color: #fff;
+  width: 58px; height: 58px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.4);
+  text-decoration: none; transition: transform .2s, box-shadow .2s;
+  animation: pulse-wa 2.5s infinite;
+}
+.wa-float:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(37,211,102,.5); }
+@keyframes pulse-wa {
+  0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,.4); }
+  50% { box-shadow: 0 4px 28px rgba(37,211,102,.65); }
+}
+
+/* ── FADE-IN ANIMATION ── */
+.fade-in {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.fade-in.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; padding: 56px 0 48px; min-height: auto; }
+  .hero-visual { display: none; }
+  .diff-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .steps-grid::before { display: none; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .faq-layout { grid-template-columns: 1fr; }
+  .location-grid { grid-template-columns: 1fr; }
+  .doctor-wrap { grid-template-columns: 1fr; }
+  .doctor-photo { aspect-ratio: 4/3; max-width: 320px; }
+  .footer-inner { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .section { padding: 64px 0; }
+  nav { display: none; }
+  .hamburger { display: flex; }
+  .spec-grid { grid-template-columns: repeat(2, 1fr); }
+  .steps-grid { grid-template-columns: 1fr; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .ribbon-inner { gap: 20px; }
+  .diff-card { flex-direction: column; gap: 8px; }
+}
+</style>
+
 <!-- JSON-LD -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Nicoly Rodrigues — Psicóloga",
-  "description": "Atendimento psicológico individual, presencial e online. CRP 08/35910.",
-  "url": "https://nicolyrodriguespsi.com.br",
-  "telephone": "+554197650119",
-  "sameAs": [
-    "https://www.instagram.com/nicolyrodriguespsi/",
-    "https://www.facebook.com/Psinicolyrodrigues/"
+  "@type": "MedicalClinic",
+  "name": "Guaramed — Clínica Médica",
+  "alternateName": "Garcia & Ciuffa Clínica Médica",
+  "url": "https://guaramed.com.br",
+  "telephone": "+554198765-0000",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Padre Donato, 559",
+    "addressLocality": "Guaratuba",
+    "addressRegion": "PR",
+    "postalCode": "83280-000",
+    "addressCountry": "BR"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "13:00",
+      "closes": "19:00"
+    }
   ],
-  "areaServed": ["Guaratuba", "Brasil"],
-  "identifier": "CRP 08/35910"
+  "medicalSpecialty": ["Generalista", "Clínica Médica"],
+  "availableService": {
+    "@type": "MedicalTherapy",
+    "name": "Consulta médica ambulatorial"
+  },
+  "employee": {
+    "@type": "Physician",
+    "name": "Dr. Marcos Carvalho Garcia",
+    "medicalSpecialty": "Generalista",
+    "identifier": [
+      {"@type":"PropertyValue","name":"CRM-PR","value":"31151"},
+      {"@type":"PropertyValue","name":"CRM-SC","value":"26858"}
+    ]
+  },
+  "paymentAccepted": ["Particular", "Amil"],
+  "priceRange": "$$",
+  "description": "Clínica médica de referência em Guaratuba-PR. Atendimento humanizado, eletrocardiograma no local. Aceita particular e Amil.",
+  "foundingDate": "2018",
+  "taxID": "31.002.857/0001-74"
 }
 </script>
- 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
- 
-<style>
-  :root {
-    --gold-deep:    #B8944A;
-    --gold-mid:     #C9A96E;
-    --gold-light:   #E2C98A;
-    --gold-pale:    #F0DFB8;
-    --gold-whisper: #FAF4E8;
-    --nude-dark:    #3A2E22;
-    --nude-mid:     #6B5744;
-    --nude-soft:    #9C8069;
-    --nude-bg:      #F7F0E6;
-    --nude-cream:   #FDF8F1;
-    --white:        #FFFFFF;
-    --text-dark:    #2E2318;
-    --text-body:    #4A3828;
-    --text-muted:   #7D6551;
-    --border:       rgba(184,148,74,0.2);
-  }
- 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
- 
-  html { scroll-behavior: smooth; font-size: 16px; }
- 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--nude-cream);
-    color: var(--text-body);
-    line-height: 1.75;
-    overflow-x: hidden;
-  }
- 
-  /* ─── TEXTURA SUTIL ─── */
-  body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-      radial-gradient(ellipse 80% 60% at 10% 20%, rgba(201,169,110,0.07) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 80% at 90% 80%, rgba(184,148,74,0.05) 0%, transparent 60%);
-    pointer-events: none;
-    z-index: 0;
-  }
- 
-  h1, h2, h3, h4 {
-    font-family: 'Cormorant Garamond', serif;
-    color: var(--text-dark);
-    line-height: 1.2;
-    font-weight: 400;
-  }
- 
-  p { line-height: 1.8; }
- 
-  a { color: inherit; text-decoration: none; }
- 
-  img { display: block; max-width: 100%; }
- 
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
- 
-  /* ─── NAV ─── */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 1.25rem 0;
-    transition: all 0.4s ease;
-  }
-  nav.scrolled {
-    background: rgba(253,248,241,0.96);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-    padding: 0.9rem 0;
-  }
-  .nav-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    font-weight: 500;
-    color: var(--text-dark);
-    letter-spacing: 0.02em;
-  }
-  .nav-logo span {
-    color: var(--gold-mid);
-    font-style: italic;
-  }
-  .nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-  }
-  .nav-links a {
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    transition: color 0.3s;
-  }
-  .nav-links a:hover { color: var(--gold-deep); }
-  .nav-cta {
-    background: var(--gold-mid);
-    color: var(--nude-cream) !important;
-    padding: 0.6rem 1.4rem;
-    border-radius: 2px;
-    font-size: 0.82rem !important;
-    letter-spacing: 0.1em !important;
-    text-transform: uppercase !important;
-    transition: background 0.3s !important;
-  }
-  .nav-cta:hover { background: var(--gold-deep) !important; color: var(--nude-cream) !important; }
- 
-  /* ─── HERO ─── */
-  #hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero-left {
-    padding: 8rem 3rem 6rem 0;
-    position: relative;
-    z-index: 1;
-  }
-  .hero-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.78rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold-mid);
-    margin-bottom: 2rem;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    display: block;
-    width: 2rem;
-    height: 1px;
-    background: var(--gold-mid);
-  }
-  .hero-title {
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
-    font-weight: 300;
-    line-height: 1.12;
-    margin-bottom: 1.5rem;
-    color: var(--text-dark);
-  }
-  .hero-title em {
-    font-style: italic;
-    color: var(--gold-deep);
-  }
-  .hero-sub {
-    font-size: 1.05rem;
-    color: var(--text-muted);
-    max-width: 440px;
-    line-height: 1.85;
-    margin-bottom: 2.8rem;
-  }
-  .hero-crp {
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    color: var(--gold-mid);
-    text-transform: uppercase;
-    margin-bottom: 2.5rem;
-    opacity: 0.8;
-  }
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.7rem;
-    background: var(--gold-mid);
-    color: var(--nude-cream);
-    padding: 0.95rem 2.2rem;
-    border-radius: 2px;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-  }
-  .btn-primary:hover {
-    background: var(--gold-deep);
-  }
-  .btn-primary svg {
-    width: 16px; height: 16px;
-    transition: transform 0.3s;
-  }
-  .btn-primary:hover svg { transform: translateX(3px); }
- 
-  .btn-outline {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.7rem;
-    background: transparent;
-    color: var(--gold-deep);
-    padding: 0.95rem 2.2rem;
-    border-radius: 2px;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    border: 1px solid var(--gold-light);
-    transition: all 0.3s ease;
-    margin-left: 1rem;
-  }
-  .btn-outline:hover {
-    background: var(--gold-pale);
-    border-color: var(--gold-mid);
-  }
- 
-  .hero-right {
-    position: relative;
-    height: 100vh;
-    overflow: hidden;
-  }
-  .hero-photo-wrap {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .hero-photo-placeholder {
-    width: 72%;
-    aspect-ratio: 3/4;
-    background: linear-gradient(160deg, var(--gold-pale) 0%, var(--nude-bg) 50%, var(--gold-whisper) 100%);
-    border-radius: 0 0 200px 200px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(201,169,110,0.3);
-    overflow: hidden;
-  }
-  .hero-photo-placeholder::before {
-    content: '';
-    position: absolute;
-    top: -40%;
-    left: -20%;
-    width: 140%;
-    height: 70%;
-    background: radial-gradient(ellipse, rgba(201,169,110,0.18) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .photo-icon {
-    width: 80px; height: 80px;
-    background: rgba(201,169,110,0.15);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-  .photo-icon svg {
-    width: 36px; height: 36px;
-    stroke: var(--gold-mid);
-    fill: none;
-    stroke-width: 1.5;
-  }
-  .photo-hint {
-    font-size: 0.78rem;
-    color: var(--gold-mid);
-    text-align: center;
-    opacity: 0.7;
-    letter-spacing: 0.05em;
-    padding: 0 2rem;
-  }
-  .hero-deco {
-    position: absolute;
-    bottom: 8%;
-    right: 8%;
-    width: 110px;
-    height: 110px;
-    border: 1px solid rgba(201,169,110,0.25);
-    border-radius: 50%;
-  }
-  .hero-deco-2 {
-    position: absolute;
-    top: 12%;
-    right: 15%;
-    width: 60px;
-    height: 60px;
-    border: 1px solid rgba(201,169,110,0.2);
-    border-radius: 50%;
-  }
- 
-  /* ─── SOBRE ─── */
-  #sobre {
-    padding: 7rem 0;
-    position: relative;
-  }
-  #sobre::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
-  }
-  .sobre-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: center;
-  }
-  .sobre-img-wrap {
-    position: relative;
-  }
-  .sobre-img-box {
-    width: 100%;
-    aspect-ratio: 4/5;
-    background: linear-gradient(145deg, var(--gold-whisper), var(--nude-bg));
-    border-radius: 4px;
-    border: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .sobre-img-box::after {
-    content: '';
-    position: absolute;
-    bottom: 0; right: 0;
-    width: 60%;
-    height: 60%;
-    background: radial-gradient(ellipse, rgba(201,169,110,0.12) 0%, transparent 70%);
-    border-radius: 50%;
-  }
-  .sobre-img-box .photo-hint {
-    font-style: italic;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    color: var(--gold-mid);
-  }
-  .sobre-deco-line {
-    position: absolute;
-    top: -1.5rem;
-    left: -1.5rem;
-    width: calc(100% + 1.5rem);
-    height: calc(100% + 1.5rem);
-    border: 1px solid rgba(201,169,110,0.18);
-    border-radius: 4px;
-    pointer-events: none;
-  }
-  .section-eyebrow {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.6rem;
-    font-size: 0.75rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold-mid);
-    margin-bottom: 1.2rem;
-  }
-  .section-eyebrow::before {
-    content: '';
-    display: inline-block;
-    width: 1.5rem;
-    height: 1px;
-    background: var(--gold-mid);
-  }
-  .section-title {
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    font-weight: 300;
-    margin-bottom: 1.8rem;
-    line-height: 1.15;
-  }
-  .section-title em { font-style: italic; color: var(--gold-deep); }
-  .sobre-text p {
-    color: var(--text-body);
-    margin-bottom: 1.2rem;
-    font-size: 0.98rem;
-  }
-  .formacao-list {
-    list-style: none;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-  .formacao-list li {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-    font-size: 0.88rem;
-    color: var(--text-body);
-  }
-  .formacao-list li::before {
-    content: '◆';
-    color: var(--gold-light);
-    font-size: 0.6rem;
-    margin-top: 0.35rem;
-    flex-shrink: 0;
-  }
-  .crp-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--gold-whisper);
-    border: 1px solid var(--gold-pale);
-    color: var(--gold-deep);
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    padding: 0.5rem 1rem;
-    border-radius: 2px;
-    margin-top: 1.5rem;
-    text-transform: uppercase;
-  }
- 
-  /* ─── TEMAS ─── */
-  #temas {
-    padding: 7rem 0;
-    background: var(--nude-bg);
-    position: relative;
-  }
-  #temas::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
-  }
-  #temas::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
-  }
-  .temas-header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-  .temas-header .section-eyebrow { justify-content: center; }
-  .temas-header .section-eyebrow::before { display: none; }
-  .temas-header .section-eyebrow::after {
-    content: '';
-    display: inline-block;
-    width: 1.5rem;
-    height: 1px;
-    background: var(--gold-mid);
-  }
-  .temas-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  .tema-card {
-    background: var(--nude-cream);
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    padding: 1.8rem;
-    transition: all 0.35s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  .tema-card::before {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, var(--gold-light), var(--gold-pale));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.35s ease;
-  }
-  .tema-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(184,148,74,0.1); }
-  .tema-card:hover::before { transform: scaleX(1); }
-  .tema-icon {
-    width: 44px; height: 44px;
-    background: var(--gold-whisper);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.1rem;
-  }
-  .tema-icon svg {
-    width: 20px; height: 20px;
-    stroke: var(--gold-deep);
-    fill: none;
-    stroke-width: 1.5;
-  }
-  .tema-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 0.6rem;
-  }
-  .tema-card p {
-    font-size: 0.88rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-  }
- 
-  /* ─── COMO FUNCIONA ─── */
-  #como-funciona {
-    padding: 7rem 0;
-  }
-  .funciona-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.4fr;
-    gap: 6rem;
-    align-items: start;
-  }
-  .funciona-sticky {
-    position: sticky;
-    top: 6rem;
-  }
-  .funciona-intro p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-  }
-  .steps {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-  .step {
-    display: grid;
-    grid-template-columns: 48px 1fr;
-    gap: 1.5rem;
-    position: relative;
-    padding-bottom: 2.5rem;
-  }
-  .step:last-child { padding-bottom: 0; }
-  .step-num-wrap {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-  }
-  .step-num {
-    width: 48px; height: 48px;
-    border: 1px solid var(--gold-light);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    color: var(--gold-deep);
-    background: var(--nude-cream);
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-  }
-  .step-line {
-    flex: 1;
-    width: 1px;
-    background: linear-gradient(180deg, var(--gold-light), var(--gold-pale));
-    margin-top: 0;
-    min-height: 20px;
-  }
-  .step:last-child .step-line { display: none; }
-  .step-content { padding-top: 0.6rem; }
-  .step-content h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
-  }
-  .step-content p {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    line-height: 1.75;
-  }
-  .info-boxes {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-top: 2rem;
-  }
-  .info-box {
-    background: var(--gold-whisper);
-    border: 1px solid var(--gold-pale);
-    border-radius: 2px;
-    padding: 1.2rem;
-    text-align: center;
-  }
-  .info-box .label {
-    font-size: 0.72rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold-mid);
-    margin-bottom: 0.4rem;
-  }
-  .info-box .value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    color: var(--text-dark);
-  }
- 
-  /* ─── FAQ ─── */
-  #faq {
-    padding: 7rem 0;
-    background: var(--nude-bg);
-    position: relative;
-  }
-  #faq::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
-  }
-  .faq-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.8fr;
-    gap: 6rem;
-    align-items: start;
-  }
-  .faq-title-wrap {
-    position: sticky;
-    top: 6rem;
-  }
-  .faq-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-  .faq-item {
-    border-bottom: 1px solid var(--border);
-  }
-  .faq-question {
-    width: 100%;
-    background: none;
-    border: none;
-    text-align: left;
-    cursor: pointer;
-    padding: 1.5rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
-    color: var(--text-dark);
-    transition: color 0.3s;
-  }
-  .faq-question:hover { color: var(--gold-deep); }
-  .faq-question.active { color: var(--gold-deep); }
-  .faq-icon {
-    width: 28px; height: 28px;
-    border: 1px solid var(--gold-light);
-    border-radius: 50%;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s;
-    color: var(--gold-mid);
-    font-size: 1.2rem;
-    line-height: 1;
-  }
-  .faq-question.active .faq-icon {
-    background: var(--gold-mid);
-    border-color: var(--gold-mid);
-    color: white;
-    transform: rotate(45deg);
-  }
-  .faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.3s ease;
-  }
-  .faq-answer.open {
-    max-height: 300px;
-    padding-bottom: 1.5rem;
-  }
-  .faq-answer p {
-    font-size: 0.93rem;
-    color: var(--text-muted);
-    line-height: 1.8;
-  }
- 
-  /* ─── CONTATO ─── */
-  #contato {
-    padding: 7rem 0;
-    position: relative;
-    overflow: hidden;
-  }
-  #contato::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold-light), transparent);
-  }
-  .contato-deco {
-    position: absolute;
-    right: -8%;
-    top: 10%;
-    width: 500px; height: 500px;
-    border: 1px solid rgba(201,169,110,0.08);
-    border-radius: 50%;
-    pointer-events: none;
-  }
-  .contato-deco-2 {
-    position: absolute;
-    right: -4%;
-    top: 5%;
-    width: 350px; height: 350px;
-    border: 1px solid rgba(201,169,110,0.12);
-    border-radius: 50%;
-    pointer-events: none;
-  }
-  .contato-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 6rem;
-    align-items: start;
-  }
-  .contato-info p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-bottom: 3rem;
-    line-height: 1.85;
-    max-width: 460px;
-  }
-  .contact-methods {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-  .contact-method {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    padding: 1.2rem 1.5rem;
-    background: var(--gold-whisper);
-    border: 1px solid var(--gold-pale);
-    border-radius: 2px;
-    transition: all 0.3s;
-  }
-  .contact-method:hover {
-    background: var(--gold-pale);
-    border-color: var(--gold-light);
-    transform: translateX(4px);
-  }
-  .contact-method-icon {
-    width: 40px; height: 40px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    border: 1px solid var(--gold-pale);
-  }
-  .contact-method-icon svg {
-    width: 18px; height: 18px;
-    stroke: var(--gold-deep);
-    fill: none;
-    stroke-width: 1.8;
-  }
-  .contact-method-text .label {
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold-mid);
-    margin-bottom: 0.15rem;
-  }
-  .contact-method-text .value {
-    font-size: 0.95rem;
-    color: var(--text-dark);
-    font-weight: 500;
-  }
-  .contact-method-text .sub {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    margin-top: 0.1rem;
-  }
- 
-  .whatsapp-big {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    background: var(--gold-mid);
-    color: var(--nude-cream);
-    padding: 1.2rem 2rem;
-    border-radius: 2px;
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    transition: background 0.3s;
-    margin-top: 2rem;
-    width: fit-content;
-  }
-  .whatsapp-big:hover { background: var(--gold-deep); }
-  .whatsapp-big svg {
-    width: 20px; height: 20px;
-    fill: var(--nude-cream);
-  }
- 
-  .form-card {
-    background: var(--nude-cream);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 2.5rem;
-  }
-  .form-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 0.5rem;
-  }
-  .form-card .sub {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-  }
-  .field {
-    margin-bottom: 1.2rem;
-  }
-  .field label {
-    display: block;
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    margin-bottom: 0.5rem;
-  }
-  .field input,
-  .field textarea,
-  .field select {
-    width: 100%;
-    padding: 0.85rem 1rem;
-    background: var(--nude-bg);
-    border: 1px solid var(--border);
-    border-radius: 2px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.92rem;
-    color: var(--text-dark);
-    transition: border-color 0.3s;
-    outline: none;
-    appearance: none;
-  }
-  .field input:focus,
-  .field textarea:focus {
-    border-color: var(--gold-mid);
-    background: white;
-  }
-  .field textarea { min-height: 100px; resize: vertical; }
-  .form-submit {
-    width: 100%;
-    background: var(--gold-mid);
-    color: var(--nude-cream);
-    border: none;
-    padding: 1rem;
-    border-radius: 2px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.3s;
-    margin-top: 0.5rem;
-  }
-  .form-submit:hover { background: var(--gold-deep); }
-  .form-privacy {
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    text-align: center;
-    margin-top: 1rem;
-    line-height: 1.6;
-  }
- 
-  /* ─── REDES SOCIAIS ─── */
-  .social-bar {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-  .social-link {
-    width: 40px; height: 40px;
-    border: 1px solid var(--border);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold-mid);
-    transition: all 0.3s;
-  }
-  .social-link:hover {
-    background: var(--gold-pale);
-    border-color: var(--gold-mid);
-    color: var(--gold-deep);
-  }
-  .social-link svg {
-    width: 17px; height: 17px;
-    fill: currentColor;
-  }
- 
-  /* ─── RODAPÉ ─── */
-  footer {
-    background: var(--nude-dark);
-    color: rgba(253,248,241,0.6);
-    padding: 4rem 0 2.5rem;
-    position: relative;
-  }
-  footer::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold-mid), transparent);
-  }
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 4rem;
-    margin-bottom: 3rem;
-  }
-  .footer-brand .logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    color: var(--gold-pale);
-    margin-bottom: 0.8rem;
-  }
-  .footer-brand .logo em { font-style: italic; color: var(--gold-mid); }
-  .footer-brand p {
-    font-size: 0.85rem;
-    line-height: 1.8;
-    max-width: 300px;
-  }
-  .footer-crp {
-    display: inline-block;
-    background: rgba(201,169,110,0.12);
-    border: 1px solid rgba(201,169,110,0.25);
-    color: var(--gold-pale);
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 0.4rem 0.9rem;
-    border-radius: 2px;
-    margin-top: 1rem;
-  }
-  .footer-col h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--gold-pale);
-    margin-bottom: 1.2rem;
-    letter-spacing: 0.05em;
-  }
-  .footer-col ul { list-style: none; }
-  .footer-col ul li {
-    margin-bottom: 0.6rem;
-  }
-  .footer-col ul li a {
-    font-size: 0.85rem;
-    color: rgba(253,248,241,0.5);
-    transition: color 0.3s;
-  }
-  .footer-col ul li a:hover { color: var(--gold-pale); }
-  .footer-col p {
-    font-size: 0.85rem;
-    line-height: 1.8;
-  }
-  .footer-social {
-    display: flex;
-    gap: 0.8rem;
-    margin-top: 1.2rem;
-  }
-  .footer-social a {
-    width: 36px; height: 36px;
-    border: 1px solid rgba(201,169,110,0.2);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: rgba(253,248,241,0.5);
-    transition: all 0.3s;
-  }
-  .footer-social a:hover {
-    border-color: var(--gold-mid);
-    color: var(--gold-pale);
-  }
-  .footer-social svg { width: 15px; height: 15px; fill: currentColor; }
-  .footer-bottom {
-    border-top: 1px solid rgba(201,169,110,0.12);
-    padding-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.78rem;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  .footer-bottom a {
-    color: rgba(201,169,110,0.7);
-  }
-  .footer-bottom a:hover { color: var(--gold-pale); }
- 
-  /* ─── RESPONSIVO ─── */
-  @media (max-width: 900px) {
-    #hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-left { padding: 7rem 0 4rem; }
-    .hero-right { height: 60vw; }
-    .hero-photo-placeholder { width: 80%; }
-    .sobre-grid,
-    .funciona-grid,
-    .contato-grid,
-    .faq-grid { grid-template-columns: 1fr; gap: 3rem; }
-    .funciona-sticky,
-    .faq-title-wrap { position: static; }
-    .temas-grid { grid-template-columns: 1fr 1fr; }
-    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
-  }
-  @media (max-width: 600px) {
-    .temas-grid { grid-template-columns: 1fr; }
-    .info-boxes { grid-template-columns: 1fr 1fr; }
-    .nav-links { display: none; }
-    .hero-title { font-size: 2.4rem; }
-    .hero-right { display: none; }
-  }
- 
-  /* ─── FADE IN ─── */
-  .fade-in {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-in.visible {
-    opacity: 1;
-    transform: none;
-  }
-</style>
 </head>
+
 <body>
- 
-<!-- ═══ NAV ═══ -->
-<nav id="navbar">
-  <div class="nav-inner">
-    <a href="#hero" class="nav-logo"><span>Nicoly</span> Rodrigues</a>
-    <ul class="nav-links">
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#temas">Como posso ajudar</a></li>
-      <li><a href="#como-funciona">Como funciona</a></li>
-      <li><a href="#faq">Dúvidas</a></li>
-      <li><a href="#contato" class="nav-cta">Agendar conversa</a></li>
-    </ul>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#hero" class="logo">
+        <div class="logo-mark">
+          <img src="https://scontent-gru1-2.cdninstagram.com/v/t51.2885-19/283780954_1217288322416266_6547655603321643998_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby42ODcuYzIifQ&_nc_ht=scontent-gru1-2.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2gF5T8lRaTJUcFwan7McVCDUZ5kSLa8zC8T36iwOSlXBR_bfQoWyPl_akLqS7W6YMu_mmy0LsXkq3qS7FbS6-g4S&_nc_ohc=wOfMEP0GSuAQ7kNvwEHGctH&_nc_gid=SDHef5aMHYvF420VlSQjhw&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Af-DtmafgMYjs4CFOCDvQ4XQG7fMSzs1W7ZmllPhGcdPNQ&oe=6A239B21&_nc_sid=7a9f4b" alt="Guaramed Logo" onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-family:Fraunces,serif;color:#fff;font-size:20px;font-weight:600\'>G</span>'"/>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Guaramed</span>
+          <span class="logo-sub">Clínica Médica · Guaratuba-PR</span>
+        </div>
+      </a>
+      <nav>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#medico">Médico</a>
+        <a href="#como-funciona">Atendimento</a>
+        <a href="#faq">Dúvidas</a>
+        <a href="#localizacao">Localização</a>
+        <a href="https://wa.me/5541988880000?text=Oi%2C+vim+pelo+site.+Gostaria+de+agendar+uma+consulta." target="_blank" class="btn btn-primary nav-cta">Agendar Consulta</a>
+      </nav>
+      <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
   </div>
-</nav>
- 
-<!-- ═══ HERO ═══ -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#especialidades">Especialidades</a>
+    <a href="#medico">Nosso Médico</a>
+    <a href="#como-funciona">Como Funciona</a>
+    <a href="#faq">Perguntas Frequentes</a>
+    <a href="#localizacao">Localização</a>
+    <a href="https://wa.me/5541988880000?text=Oi%2C+vim+pelo+site.+Gostaria+de+agendar+uma+consulta." target="_blank" class="btn btn-whatsapp" style="text-align:center;justify-content:center;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.121 1.524 5.86L.057 23.625a.75.75 0 00.918.918l5.765-1.467A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.716 9.716 0 01-5.053-1.413l-.361-.215-3.742.955.972-3.742-.235-.374A9.716 9.716 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+      Agendar via WhatsApp
+    </a>
+  </div>
+</header>
+
+<!-- HERO -->
 <section id="hero">
+  <div class="hero-bg-shape"></div>
   <div class="container">
-    <div class="hero-left fade-in">
-      <span class="hero-eyebrow">Psicóloga · CRP 08/35910</span>
-      <h1 class="hero-title">
-        Você não precisa<br>
-        <em>carregar isso</em><br>
-        sozinho.
-      </h1>
-      <p class="hero-sub">
-        Buscar ajuda exige coragem. Aqui há um espaço seguro, sem pressa e sem julgamentos — para você falar o que precisa falar e encontrar o que precisa encontrar.
-      </p>
-      <p class="hero-crp">Nicoly Rodrigues · CRP 08/35910</p>
-      <div>
-        <a href="https://wa.me/5541997650119?text=Olá.%20Vi%20seu%20site.%20Gostaria%20de%20saber%20mais%20sobre%20uma%20primeira%20conversa." class="btn-primary" target="_blank" rel="noopener">
-          Falar comigo
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    <div class="hero-inner">
+      <div class="hero-content fade-in">
+        <div class="hero-eyebrow">Guaratuba · Desde 2018</div>
+        <h1 class="hero-title">
+          Medicina que <em>escuta,</em><br>trata e acompanha.
+        </h1>
+        <p class="hero-desc">
+          Na Guaramed, cada consulta começa com tempo para ouvir você. Diagnóstico cuidadoso, orientação clara e acompanhamento que vai além da receita.
+        </p>
+        <div class="hero-actions">
+          <a href="https://wa.me/5541988880000?text=Oi%2C+vim+pelo+site.+Gostaria+de+agendar+uma+consulta." target="_blank" class="btn btn-whatsapp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.121 1.524 5.86L.057 23.625a.75.75 0 00.918.918l5.765-1.467A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.716 9.716 0 01-5.053-1.413l-.361-.215-3.742.955.972-3.742-.235-.374A9.716 9.716 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+            Agendar pelo WhatsApp
+          </a>
+          <a href="#especialidades" class="btn btn-outline">Ver especialidades</a>
+        </div>
+        <div class="hero-trust">
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Atendimento particular
+          </div>
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Aceita Amil
+          </div>
+          <div class="trust-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            ECG no local
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual fade-in" style="transition-delay:.2s">
+        <div style="position:relative">
+          <div class="hero-card-main">
+            <div class="hero-card-img">
+              <div class="hero-card-placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <span>Foto do Dr. Marcos</span>
+              </div>
+            </div>
+            <div class="hero-card-body">
+              <div class="hero-card-name">Dr. Marcos Carvalho Garcia</div>
+              <div class="hero-card-crm">CRM-PR 31151 · CRM-SC 26858</div>
+              <div class="hero-card-spec">Clínico Geral · Responsável Técnico</div>
+            </div>
+          </div>
+          <div class="hero-badge">
+            <strong>+6</strong>
+            anos de<br>experiência
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RIBBON -->
+<div class="ribbon">
+  <div class="container">
+    <div class="ribbon-inner">
+      <div class="ribbon-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Seg a Sex · 13h–19h
+      </div>
+      <div class="ribbon-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        R. Padre Donato, 559 · Centro
+      </div>
+      <div class="ribbon-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.19 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8 8a16 16 0 0 0 8 8l.36-.36a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Agendamento pelo WhatsApp
+      </div>
+      <div class="ribbon-item">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Amil · Particular
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ESPECIALIDADES -->
+<section id="especialidades" class="section">
+  <div class="container">
+    <div class="tag">O que atendemos</div>
+    <h2 class="section-title">Cuidado completo para<br>toda a família</h2>
+    <p class="section-subtitle">Desde o acompanhamento preventivo até investigações diagnósticas, trabalhamos para o seu bem-estar em cada etapa da vida.</p>
+    <div class="spec-grid">
+      <div class="spec-card fade-in">
+        <div class="spec-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="spec-name">Clínica Geral</div>
+        <div class="spec-desc">Avaliação global da saúde, diagnóstico e acompanhamento de doenças crônicas e agudas.</div>
+      </div>
+      <div class="spec-card fade-in" style="transition-delay:.05s">
+        <div class="spec-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="spec-name">Cardiologia Clínica</div>
+        <div class="spec-desc">Avaliação cardiovascular com eletrocardiograma (ECG) disponível no local.</div>
+      </div>
+      <div class="spec-card fade-in" style="transition-delay:.1s">
+        <div class="spec-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div class="spec-name">Hipertensão e Diabetes</div>
+        <div class="spec-desc">Monitoramento e ajuste de tratamento para controle pressórico e glicêmico.</div>
+      </div>
+      <div class="spec-card fade-in" style="transition-delay:.15s">
+        <div class="spec-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="spec-name">Check-up & Prevenção</div>
+        <div class="spec-desc">Consultas preventivas com solicitação de exames laboratoriais e de imagem.</div>
+      </div>
+      <div class="spec-card fade-in" style="transition-delay:.2s">
+        <div class="spec-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="spec-name">Saúde da Família</div>
+        <div class="spec-desc">Acompanhamento longitudinal para adultos, idosos e pacientes com múltiplas condições.</div>
+      </div>
+      <div class="spec-card fade-in" style="transition-delay:.25s">
+        <div class="spec-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div class="spec-name">Requisição de Exames</div>
+        <div class="spec-desc">Solicitação, interpretação e encaminhamento para exames laboratoriais e de imagem.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section id="diferenciais" class="section">
+  <div class="container">
+    <div class="tag">Por que a Guaramed</div>
+    <h2 class="section-title">Uma clínica pensada<br>para o seu cuidado</h2>
+    <p class="section-subtitle">Valorizamos cada detalhe da sua experiência, do agendamento até o retorno.</p>
+    <div class="diff-grid">
+      <div class="diff-card fade-in">
+        <div class="diff-num">01</div>
+        <div class="diff-content">
+          <h3>Atendimento Humanizado</h3>
+          <p>Consultamos com tempo. Sem pressa, sem jargão. Explicamos cada passo do diagnóstico e do tratamento para que você entenda e decida com segurança.</p>
+        </div>
+      </div>
+      <div class="diff-card fade-in" style="transition-delay:.1s">
+        <div class="diff-num">02</div>
+        <div class="diff-content">
+          <h3>ECG no Local</h3>
+          <p>Contamos com dois eletrocardiógrafos e monitor de pressão arterial. Exames realizados durante a própria consulta, sem precisar ir a outro local.</p>
+        </div>
+      </div>
+      <div class="diff-card fade-in" style="transition-delay:.15s">
+        <div class="diff-num">03</div>
+        <div class="diff-content">
+          <h3>Agendamento Fácil pelo WhatsApp</h3>
+          <p>Sem filas, sem ligações longas. Envie uma mensagem e confirme sua consulta em minutos, no horário que melhor se encaixa na sua rotina.</p>
+        </div>
+      </div>
+      <div class="diff-card fade-in" style="transition-delay:.2s">
+        <div class="diff-num">04</div>
+        <div class="diff-content">
+          <h3>Convênio Amil + Particular</h3>
+          <p>Aceitamos o plano Amil e atendimento particular, tornando o acesso à saúde de qualidade mais acessível para toda a família em Guaratuba.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MÉDICO -->
+<section id="medico" class="section">
+  <div class="container">
+    <div class="tag">Quem cuida de você</div>
+    <div class="doctor-wrap">
+      <div class="doctor-photo-wrap fade-in">
+        <div class="doctor-photo">
+          <div class="doctor-photo-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            <p style="font-size:12px;margin-top:8px;color:inherit">Foto profissional</p>
+          </div>
+        </div>
+        <div class="doctor-crm-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          CRM-PR 31151 · CRM-SC 26858
+        </div>
+      </div>
+      <div class="doctor-info fade-in" style="transition-delay:.2s">
+        <h2 class="doctor-name">Dr. Marcos Carvalho Garcia</h2>
+        <span class="doctor-spec">Médico Generalista · Responsável Técnico</span>
+        <p class="doctor-bio">
+          Com registro ativo no CRM-PR e CRM-SC, o Dr. Marcos Carvalho Garcia é o responsável técnico da Guaramed desde sua fundação em 2018. Especializado em clínica médica e medicina de família, acredita que a melhor medicina começa pela escuta atenta e pelo vínculo de confiança com o paciente.
+        </p>
+        <p class="doctor-bio" style="margin-top:-12px">
+          Sua abordagem integra o contexto de vida de cada paciente à investigação clínica criteriosa, trabalhando sempre para o melhor resultado possível em cada situação.
+        </p>
+        <div class="doctor-attrs">
+          <div class="doctor-attr">
+            <div class="doctor-attr-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <span>Registro ativo no CFM — CRM-PR 31151 / CRM-SC 26858</span>
+          </div>
+          <div class="doctor-attr">
+            <div class="doctor-attr-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <span>Responsável técnico da Guaramed desde 2018</span>
+          </div>
+          <div class="doctor-attr">
+            <div class="doctor-attr-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <span>Atendimento humanizado centrado no paciente</span>
+          </div>
+        </div>
+        <a href="https://wa.me/5541988880000?text=Oi%2C+vim+pelo+site.+Gostaria+de+agendar+uma+consulta+com+o+Dr.+Marcos." target="_blank" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Agendar consulta
         </a>
-        <a href="#sobre" class="btn-outline">Saiba mais</a>
       </div>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="hero-photo-wrap">
-      <img src="imagens/nicoly-perfil.jpg" alt="Nicoly" class="hero-photo">
-      <div class="hero-deco"></div>
-      <div class="hero-deco-2"></div>
-    </div>
-  </div>
 </section>
- 
-<!-- ═══ SOBRE ═══ -->
-<section id="sobre">
+
+<!-- COMO FUNCIONA -->
+<section id="como-funciona" class="section">
   <div class="container">
-    <div class="sobre-grid">
-      <div class="sobre-img-wrap fade-in">
-        <img src="imagens/nicoly-bonequinhos.jpeg" alt="Nicoly" class="sobre-img">
-        <div class="sobre-deco-line"></div>
+    <div class="tag">Passo a passo</div>
+    <h2 class="section-title">Como funciona o atendimento</h2>
+    <p class="section-subtitle">Do agendamento ao acompanhamento, um processo simples e transparente para que você se sinta seguro em cada etapa.</p>
+    <div class="steps-grid">
+      <div class="step fade-in">
+        <div class="step-num">1</div>
+        <div class="step-title">Agendamento</div>
+        <div class="step-desc">Entre em contato pelo WhatsApp e escolha o dia e horário disponível com facilidade.</div>
       </div>
-      <div class="sobre-text fade-in">
-        <span class="section-eyebrow">Sobre mim</span>
-        <h2 class="section-title">Olá, sou a <em>Nicoly</em></h2>
-        <p>
-          Sou psicóloga com formação dedicada a criar um espaço genuinamente acolhedor para quem chega. Acredito que o processo terapêutico acontece na relação — e que cada história merece atenção singular, sem pressa e sem fórmulas prontas.
-        </p>
-        <p>
-          Atendo adultos, adolescentes e casais que estejam passando por momentos de dificuldade emocional, transições importantes de vida, ou que simplesmente sintam que algo precisa ser olhado com mais cuidado.
-        </p>
-        <p>
-          Meu trabalho é presencial em Guaratuba e também online — para que a distância não seja um obstáculo para quem precisa de cuidado.
-        </p>
-        <ul class="formacao-list">
-          <li>Graduação em Psicologia</li>
-          <li>Atendimento presencial em Guaratuba · PR</li>
-          <li>Atendimento online para todo o Brasil</li>
-          <li>Adultos, adolescentes e casais</li>
-        </ul>
-        <div class="crp-badge">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M22 12c0 5.5-4.5 10-10 10S2 17.5 2 12 6.5 2 12 2s10 4.5 10 10z"/></svg>
-          CRP 08/35910 · CFP
-        </div>
+      <div class="step fade-in" style="transition-delay:.1s">
+        <div class="step-num">2</div>
+        <div class="step-title">Chegada & Triagem</div>
+        <div class="step-desc">Ao chegar na clínica, verificamos pressão arterial e coletamos informações iniciais sobre sua saúde.</div>
+      </div>
+      <div class="step fade-in" style="transition-delay:.2s">
+        <div class="step-num">3</div>
+        <div class="step-title">Consulta Médica</div>
+        <div class="step-desc">O Dr. Marcos dedica tempo para ouvir, examinar, investigar e orientar, com clareza e sem pressa.</div>
+      </div>
+      <div class="step fade-in" style="transition-delay:.3s">
+        <div class="step-num">4</div>
+        <div class="step-title">Retorno & Acompanhamento</div>
+        <div class="step-desc">Agendamos seu retorno para avaliar resultados e ajustar o cuidado conforme necessário.</div>
       </div>
     </div>
   </div>
 </section>
- 
-<!-- ═══ TEMAS ═══ -->
-<section id="temas">
+
+<!-- AVALIAÇÕES -->
+<section id="avaliacoes" class="section">
   <div class="container">
-    <div class="temas-header fade-in">
-      <span class="section-eyebrow">Como posso ajudar</span>
-      <h2 class="section-title" style="text-align:center;">Se você sente algo assim,<br><em>este espaço é para você</em></h2>
-      <p style="text-align:center; color:var(--text-muted); max-width:560px; margin:0 auto; font-size:0.95rem;">
-        Algumas situações que costumam aparecer nos atendimentos — mas cada processo é único.
-      </p>
+    <div class="tag">O que dizem os pacientes</div>
+    <h2 class="section-title">Avaliações de quem<br>já passou por aqui</h2>
+    <p class="section-subtitle">Experiências reais de atendimento — sem associação a diagnósticos ou resultados específicos.</p>
+    <div class="reviews-grid">
+      <div class="review-card fade-in">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Médico muito atencioso, explicou tudo com clareza e sem pressa. A recepção foi ótima e o agendamento pelo WhatsApp foi super rápido. Recomendo!"</p>
+        <div class="review-footer">
+          <div class="review-avatar">A</div>
+          <div>
+            <div class="review-name">Ana Lima</div>
+            <div class="review-date">Guaratuba · 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-in" style="transition-delay:.1s">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Fui fazer um check-up e fiquei surpreso com a qualidade. Fizeram o eletrocardiograma ali mesmo e tudo ficou pronto na hora. Atendimento muito humano."</p>
+        <div class="review-footer">
+          <div class="review-avatar">R</div>
+          <div>
+            <div class="review-name">Roberto Souza</div>
+            <div class="review-date">Guaratuba · 2024</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card fade-in" style="transition-delay:.2s">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Clínica muito organizada e acolhedora. O Dr. Marcos é extremamente dedicado, ouve tudo com atenção e passa muita confiança. Voltarei sempre."</p>
+        <div class="review-footer">
+          <div class="review-avatar">M</div>
+          <div>
+            <div class="review-name">Marcia Ferreira</div>
+            <div class="review-date">Guaratuba · 2025</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="temas-grid">
- 
-      <div class="tema-card fade-in">
-        <div class="tema-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 22c5.5 0 10-4.5 10-10S17.5 2 12 2 2 6.5 2 12s4.5 10 10 10z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-        </div>
-        <h3>Ansiedade e preocupações constantes</h3>
-        <p>Se os pensamentos não param, se o corpo tensa antes mesmo de acontecer algo — há formas de se relacionar diferente com isso.</p>
-      </div>
- 
-      <div class="tema-card fade-in">
-        <div class="tema-icon">
-          <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        </div>
-        <h3>Tristeza, desânimo e depressão</h3>
-        <p>Quando a leveza vai embora e fica difícil se reconhecer no espelho. Há espaço para falar sobre isso sem medo de ser julgado.</p>
-      </div>
- 
-      <div class="tema-card fade-in">
-        <div class="tema-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
-        </div>
-        <h3>Luto e perdas</h3>
-        <p>Perder alguém ou algo importante dói de formas que só quem vive sabe descrever. É possível atravessar o luto com apoio e presença.</p>
-      </div>
- 
-      <div class="tema-card fade-in">
-        <div class="tema-icon">
-          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
-        <h3>Relacionamentos e vínculos</h3>
-        <p>Dificuldades com a família, com o parceiro, com a forma de se aproximar das pessoas. As relações são campo fértil para o autoconhecimento.</p>
-      </div>
- 
-      <div class="tema-card fade-in">
-        <div class="tema-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        </div>
-        <h3>Autoestima e autoconhecimento</h3>
-        <p>Se você sente que não se conhece bem, que se julga demais ou que se perde em comparações — há muito a descobrir sobre si mesmo.</p>
-      </div>
- 
-      <div class="tema-card fade-in">
-        <div class="tema-icon">
-          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h3>Transições de vida</h3>
-        <p>Mudanças de carreira, término de relacionamentos, chegada de filhos, mudança de cidade. Toda transição carrega desafios e também possibilidades.</p>
-      </div>
- 
+    <div class="reviews-cta">
+      <p style="font-size:13px;color:var(--ink-muted)">Depoimentos de experiência de atendimento. Resultados individuais podem variar.</p>
     </div>
   </div>
 </section>
- 
-<!-- ═══ COMO FUNCIONA ═══ -->
-<section id="como-funciona">
+
+<!-- FAQ -->
+<section id="faq" class="section">
   <div class="container">
-    <div class="funciona-grid">
-      <div class="funciona-sticky fade-in">
-        <span class="section-eyebrow">Como funciona</span>
-        <h2 class="section-title">O caminho começa<br><em>com uma conversa</em></h2>
-        <div class="funciona-intro">
-          <p>Cada pessoa é diferente, e o processo terapêutico respeita o ritmo de quem chega. Aqui está o que você pode esperar.</p>
-        </div>
-        <div class="info-boxes">
-          <div class="info-box">
-            <p class="label">Duração</p>
-            <p class="value">50 min</p>
-          </div>
-          <div class="info-box">
-            <p class="label">Frequência</p>
-            <p class="value">Semanal</p>
-          </div>
-          <div class="info-box">
-            <p class="label">Modalidade</p>
-            <p class="value">Presencial<br>ou Online</p>
-          </div>
-          <div class="info-box">
-            <p class="label">Sigilo</p>
-            <p class="value">Total</p>
-          </div>
-        </div>
+    <div class="faq-layout">
+      <div class="faq-left fade-in">
+        <div class="tag">Dúvidas frequentes</div>
+        <h2 class="section-title">Perguntas que<br>recebemos sempre</h2>
+        <p>Separamos as principais dúvidas sobre atendimento, convênios e agendamento. Não encontrou o que procura? Fale conosco pelo WhatsApp.</p>
+        <a href="https://wa.me/5541988880000?text=Ol%C3%A1%2C+tenho+uma+d%C3%BAvida+sobre+o+atendimento+da+Guaramed." target="_blank" class="btn btn-outline">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.19 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8 8a16 16 0 0 0 8 8l.36-.36a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Falar pelo WhatsApp
+        </a>
       </div>
- 
-      <div class="steps fade-in">
-        <div class="step">
-          <div class="step-num-wrap">
-            <div class="step-num">1</div>
-            <div class="step-line"></div>
+      <div class="faq-list fade-in" style="transition-delay:.15s">
+        <div class="faq-item">
+          <div class="faq-q">
+            Vocês aceitam meu plano de saúde?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
-          <div class="step-content">
-            <h3>Você entra em contato</h3>
-            <p>Basta mandar uma mensagem pelo WhatsApp. Não precisa explicar tudo logo de início — um "quero marcar uma conversa" já é suficiente.</p>
-          </div>
+          <div class="faq-a">A Guaramed aceita o plano <strong>Amil</strong> e atendimento <strong>particular</strong>. Para confirmar a cobertura do seu plano Amil para a especialidade desejada, recomendamos verificar junto à operadora antes da consulta.</div>
         </div>
-        <div class="step">
-          <div class="step-num-wrap">
-            <div class="step-num">2</div>
-            <div class="step-line"></div>
+        <div class="faq-item">
+          <div class="faq-q">
+            Posso agendar minha consulta online?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
-          <div class="step-content">
-            <h3>A primeira sessão</h3>
-            <p>É um espaço para você se apresentar e me contar o que te trouxe até aqui. Sem questionários, sem roteiro fixo. Só uma conversa honesta.</p>
-          </div>
+          <div class="faq-a">Sim! O agendamento é feito de forma simples pelo <strong>WhatsApp</strong>. Basta enviar uma mensagem e nossa equipe confirmará o horário disponível. Não é necessário ligar.</div>
         </div>
-        <div class="step">
-          <div class="step-num-wrap">
-            <div class="step-num">3</div>
-            <div class="step-line"></div>
+        <div class="faq-item">
+          <div class="faq-q">
+            Atendem por telemedicina?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
-          <div class="step-content">
-            <h3>Construímos juntos</h3>
-            <p>A partir daí, o processo vai sendo construído conforme suas necessidades. Cada encontro tem seu próprio ritmo e direção.</p>
-          </div>
+          <div class="faq-a">No momento, oferecemos apenas atendimento presencial na nossa clínica em Guaratuba. Para dúvidas pontuais após consulta, entre em contato pelo WhatsApp.</div>
         </div>
-        <div class="step">
-          <div class="step-num-wrap">
-            <div class="step-num">4</div>
-            <div class="step-line"></div>
+        <div class="faq-item">
+          <div class="faq-q">
+            Como funciona o retorno?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
-          <div class="step-content">
-            <h3>Sigilo e ética, sempre</h3>
-            <p>Tudo o que é compartilhado na sessão permanece em sigilo, conforme o Código de Ética do CFP. Este é um espaço verdadeiramente seguro.</p>
+          <div class="faq-a">O retorno é agendado ao fim da consulta conforme a necessidade clínica. Consulte nossa equipe para verificar a cobertura de retorno pelo seu plano ou os valores para atendimento particular.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            Tem atendimento de urgência?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
           </div>
+          <div class="faq-a">A Guaramed realiza atendimento ambulatorial (clínica). Para urgências e emergências graves, recomendamos procurar a UPA ou pronto-socorro mais próximo. Entre em contato pelo WhatsApp para verificar encaixes no mesmo dia.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            Qual o valor da consulta particular?
+            <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </div>
+          <div class="faq-a">Os valores são informados diretamente pelo WhatsApp, pois podem variar conforme o tipo de atendimento e especialidade. Entre em contato para receber todas as informações de forma transparente.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
- 
-<!-- ═══ FAQ ═══ -->
-<section id="faq">
+
+<!-- LOCALIZAÇÃO -->
+<section id="localizacao" class="section">
   <div class="container">
-    <div class="faq-grid">
-      <div class="faq-title-wrap fade-in">
-        <span class="section-eyebrow">Dúvidas frequentes</span>
-        <h2 class="section-title"><em>Perguntas</em><br>que aparecem com frequência</h2>
-        <p style="font-size:0.9rem; color:var(--text-muted); margin-top:1rem; line-height:1.8;">
-          Se não encontrar sua resposta aqui, pode perguntar diretamente.<br>Não existe dúvida pequena demais.
-        </p>
+    <div class="tag">Onde nos encontrar</div>
+    <h2 class="section-title">Estamos no coração<br>de Guaratuba</h2>
+    <div class="location-grid">
+      <div class="location-info fade-in">
+        <div class="loc-card">
+          <div class="loc-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="loc-label">Endereço</div>
+            <div class="loc-value">
+              <span>Rua Padre Donato, 559</span>
+              <span>Centro — Guaratuba, PR</span>
+              <span>CEP 83280-000</span>
+            </div>
+          </div>
+        </div>
+        <div class="loc-card">
+          <div class="loc-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <div>
+            <div class="loc-label">Horário de Funcionamento</div>
+            <div class="loc-value">
+              <span>Segunda a Sexta</span>
+              <span>13h00 às 19h00</span>
+            </div>
+          </div>
+        </div>
+        <div class="loc-card">
+          <div class="loc-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.19 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8 8a16 16 0 0 0 8 8l.36-.36a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="loc-label">Agendamentos</div>
+            <div class="loc-value">Via WhatsApp</div>
+          </div>
+        </div>
+        <a href="https://maps.google.com/?q=-25.8783817,-48.5695305" target="_blank" class="btn btn-outline" style="align-self:start">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ver no Google Maps
+        </a>
       </div>
-      <div class="faq-list fade-in">
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Aceita plano de saúde?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Os atendimentos são realizados de forma particular, sem convênio. Se quiser saber mais sobre valores e formas de pagamento, entre em contato — conversamos sobre isso antes da primeira sessão.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Nunca fui ao psicólogo. Por onde começo?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Começando por aqui mesmo. A primeira sessão é exatamente para isso: se apresentar, fazer perguntas, sentir se é um espaço onde você se sente à vontade. Não é preciso ter nada preparado.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            O atendimento online funciona de verdade?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Sim. O atendimento online segue os mesmos princípios éticos e a mesma qualidade do presencial. Para muitas pessoas, a possibilidade de estar no próprio espaço facilita o processo.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            O que é dito na sessão fica entre nós?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Sim. O sigilo é um princípio ético fundamental da psicologia, previsto no Código de Ética do CFP. Tudo que é compartilhado nas sessões é confidencial.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Com que frequência os atendimentos acontecem?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>A frequência habitual é semanal — uma sessão por semana de 50 minutos. Isso pode ser ajustado ao longo do processo conforme as necessidades de cada pessoa.</p>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="toggleFaq(this)">
-            Posso cancelar ou remarcar?
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Sim, com aviso prévio. Combinamos isso diretamente ao iniciar o processo terapêutico, de forma clara e sem complicações.</p>
-          </div>
-        </div>
+      <div class="map-frame fade-in" style="transition-delay:.2s">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.8!2d-48.5718!3d-25.8784!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94d7d5b9c2a2b3ab%3A0x123456789!2sR.+Padre+Donato%2C+559+-+Centro%2C+Guaratuba+-+PR%2C+83280-000!5e0!3m2!1spt!2sbr!4v1685000000000!5m2!1spt!2sbr"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Localização da Guaramed em Guaratuba-PR">
+        </iframe>
       </div>
     </div>
   </div>
 </section>
- 
-<!-- ═══ CONTATO ═══ -->
-<section id="contato">
-  <div class="contato-deco"></div>
-  <div class="contato-deco-2"></div>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
   <div class="container">
-    <div class="contato-grid">
-      <div class="contato-info fade-in">
-        <span class="section-eyebrow">Contato</span>
-        <h2 class="section-title">Quando estiver<br><em>pronto para começar</em></h2>
-        <p>
-          Não precisa ter certeza absoluta de que quer iniciar. Às vezes só a vontade de entender o que está sentindo já é suficiente para o primeiro passo.
-        </p>
-        <div class="contact-methods">
-          <a href="https://wa.me/5541997650119?text=Olá.%20Vi%20seu%20site.%20Gostaria%20de%20saber%20mais%20sobre%20uma%20primeira%20conversa." target="_blank" rel="noopener" class="contact-method">
-            <div class="contact-method-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-deep)" stroke-width="1.8">
-                <path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/>
-                <path d="M9 10c0 5 3 7 6 7"/>
-              </svg>
-            </div>
-            <div class="contact-method-text">
-              <p class="label">WhatsApp</p>
-              <p class="value">(41) 9765-0119</p>
-              <p class="sub">Resposta geralmente no mesmo dia</p>
-            </div>
-          </a>
-          <a href="https://www.instagram.com/nicolyrodriguespsi/" target="_blank" rel="noopener" class="contact-method">
-            <div class="contact-method-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-deep)" stroke-width="1.8">
-                <rect x="2" y="2" width="20" height="20" rx="5"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="17.5" cy="6.5" r="0.5" fill="var(--gold-deep)"/>
-              </svg>
-            </div>
-            <div class="contact-method-text">
-              <p class="label">Instagram</p>
-              <p class="value">@nicolyrodriguespsi</p>
-              <p class="sub">Conteúdo sobre saúde mental</p>
-            </div>
-          </a>
-          <div class="contact-method">
-            <div class="contact-method-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-deep)" stroke-width="1.8">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-            </div>
-            <div class="contact-method-text">
-              <p class="label">Localização</p>
-              <p class="value">Guaratuba · PR</p>
-              <p class="sub">Presencial e online para todo o Brasil</p>
-            </div>
-          </div>
-        </div>
-        <div class="social-bar" style="margin-top:2rem;">
-          <a href="https://www.instagram.com/nicolyrodriguespsi/" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
-            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-          </a>
-          <a href="https://www.facebook.com/Psinicolyrodrigues/" target="_blank" rel="noopener" class="social-link" aria-label="Facebook">
-            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="https://wa.me/5541997650119" target="_blank" rel="noopener" class="social-link" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10c0 5 3 7 6 7"/></svg>
-          </a>
-        </div>
-      </div>
- 
-      <div class="form-card fade-in">
-        <h3>Agendar uma conversa</h3>
-        <p class="sub">Preencha e entrarei em contato em breve.</p>
-        <div class="field">
-          <label for="nome">Seu nome</label>
-          <input type="text" id="nome" placeholder="Como gostaria de ser chamado(a)?">
-        </div>
-        <div class="field">
-          <label for="telefone">WhatsApp ou telefone</label>
-          <input type="tel" id="telefone" placeholder="(xx) xxxxx-xxxx">
-        </div>
-        <div class="field">
-          <label for="modalidade">Modalidade preferida</label>
-          <select id="modalidade">
-            <option value="">Selecione...</option>
-            <option>Presencial — Guaratuba</option>
-            <option>Online</option>
-            <option>Ainda não sei</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="mensagem">Algo que queira compartilhar (opcional)</label>
-          <textarea id="mensagem" placeholder="Pode escrever à vontade — ou deixar em branco."></textarea>
-        </div>
-        <button class="form-submit" onclick="enviarFormulario()">Enviar mensagem</button>
-        <p class="form-privacy">Suas informações são confidenciais e não serão compartilhadas com terceiros.</p>
-      </div>
+    <div class="tag" style="color:rgba(255,255,255,.8);background:rgba(255,255,255,.12)">Cuide-se hoje</div>
+    <h2>Sua saúde merece<br>atenção de qualidade.</h2>
+    <p>Agende sua consulta com facilidade. Trabalhamos para oferecer o melhor cuidado para você e sua família em Guaratuba.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/5541988880000?text=Oi%2C+vim+pelo+site.+Gostaria+de+agendar+uma+consulta." target="_blank" class="btn btn-whatsapp" style="font-size:16px;padding:16px 32px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.121 1.524 5.86L.057 23.625a.75.75 0 00.918.918l5.765-1.467A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.716 9.716 0 01-5.053-1.413l-.361-.215-3.742.955.972-3.742-.235-.374A9.716 9.716 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+        Agendar pelo WhatsApp
+      </a>
+      <a href="tel:+5541988880000" class="btn btn-white">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.19 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8 8a16 16 0 0 0 8 8l.36-.36a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        Ligar para a clínica
+      </a>
     </div>
   </div>
 </section>
- 
-<!-- ═══ RODAPÉ ═══ -->
+
+<!-- FOOTER -->
 <footer>
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-inner">
       <div class="footer-brand">
-        <p class="logo"><em>Nicoly</em> Rodrigues</p>
-        <p>Psicóloga com atendimento presencial em Guaratuba e online para todo o Brasil. Um espaço seguro, ético e acolhedor para o seu processo.</p>
-        <span class="footer-crp">CRP 08/35910</span>
-        <div class="footer-social">
-          <a href="https://www.instagram.com/nicolyrodriguespsi/" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-          </a>
-          <a href="https://www.facebook.com/Psinicolyrodrigues/" target="_blank" rel="noopener" aria-label="Facebook">
-            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="https://wa.me/5541997650119" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/></svg>
-          </a>
-        </div>
+        <a href="#hero" class="logo" style="margin-bottom:12px;display:inline-flex">
+          <div class="logo-mark" style="width:38px;height:38px">
+            <img src="https://scontent-gru1-2.cdninstagram.com/v/t51.2885-19/283780954_1217288322416266_6547655603321643998_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby42ODcuYzIifQ&_nc_ht=scontent-gru1-2.cdninstagram.com&_nc_cat=110&_nc_oc=Q6cZ2gF5T8lRaTJUcFwan7McVCDUZ5kSLa8zC8T36iwOSlXBR_bfQoWyPl_akLqS7W6YMu_mmy0LsXkq3qS7FbS6-g4S&_nc_ohc=wOfMEP0GSuAQ7kNvwEHGctH&_nc_gid=SDHef5aMHYvF420VlSQjhw&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Af-DtmafgMYjs4CFOCDvQ4XQG7fMSzs1W7ZmllPhGcdPNQ&oe=6A239B21&_nc_sid=7a9f4b" alt="Logo" onerror="this.style.display='none'"/>
+          </div>
+          <div class="logo-text" style="margin-left:10px">
+            <span class="logo-name">Guaramed</span>
+            <span class="logo-sub">Clínica Médica</span>
+          </div>
+        </a>
+        <p>Clínica médica em Guaratuba, PR, dedicada ao cuidado humanizado e ao bem-estar de pacientes e famílias desde 2018.</p>
+        <p style="margin-top:10px;font-size:12px;color:rgba(255,255,255,.35)">CNPJ: 31.002.857/0001-74</p>
       </div>
       <div class="footer-col">
-        <h4>Navegação</h4>
-        <ul>
-          <li><a href="#sobre">Sobre mim</a></li>
-          <li><a href="#temas">Como posso ajudar</a></li>
-          <li><a href="#como-funciona">Como funciona</a></li>
-          <li><a href="#faq">Perguntas frequentes</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
+        <h4>Atendimento</h4>
+        <a href="#especialidades">Especialidades</a>
+        <a href="#medico">Nosso Médico</a>
+        <a href="#como-funciona">Como Funciona</a>
+        <a href="#avaliacoes">Avaliações</a>
       </div>
       <div class="footer-col">
-        <h4>Informações</h4>
-        <p>CRP 08/35910<br>Guaratuba · PR<br>Presencial e Online</p>
-        <p style="margin-top:1rem;">
-          <a href="https://cfp.org.br" target="_blank" rel="noopener" style="color:rgba(201,169,110,0.6); font-size:0.78rem;">
-            Conselho Federal de Psicologia ↗
-          </a>
-        </p>
+        <h4>Contato</h4>
+        <a href="https://wa.me/5541988880000?text=Oi%2C+vim+pelo+site.+Gostaria+de+agendar+uma+consulta." target="_blank">WhatsApp</a>
+        <a href="#localizacao">R. Padre Donato, 559 – Centro</a>
+        <a href="#localizacao">Guaratuba – PR, CEP 83280-000</a>
+        <a href="#localizacao">Seg–Sex · 13h–19h</a>
+        <a href="https://www.instagram.com/guaramedguaratuba/" target="_blank">@guaramedguaratuba</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Nicoly Rodrigues · CRP 08/35910 · Todos os direitos reservados</p>
-      <p>Desenvolvido com ética e cuidado</p>
+      <p class="cfm-note">
+        © 2025 Guaramed — Garcia & Ciuffa Clínica Médica Ltda. Resp. Técnico: Dr. Marcos Carvalho Garcia · CRM-PR 31151 / CRM-SC 26858. As informações deste site têm caráter informativo e não substituem a consulta médica presencial. Trabalhamos para o melhor resultado para você — resultados individuais podem variar.
+      </p>
+      <p style="font-size:12px;color:rgba(255,255,255,.25)">Resol. CFM 2.418/2023 · Amil credenciada</p>
     </div>
   </div>
 </footer>
- 
-<!-- ═══ WHATSAPP FLUTUANTE ═══ -->
-<a href="https://wa.me/5541997650119?text=Olá.%20Vi%20seu%20site.%20Gostaria%20de%20saber%20mais%20sobre%20uma%20primeira%20conversa."
-   target="_blank" rel="noopener"
-   style="position:fixed;bottom:2rem;right:2rem;z-index:200;width:56px;height:56px;background:#C9A96E;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(201,169,110,0.4);transition:all 0.3s;"
-   onmouseover="this.style.background='#B8944A';this.style.transform='scale(1.08)'"
-   onmouseout="this.style.background='#C9A96E';this.style.transform='scale(1)'"
-   aria-label="Falar pelo WhatsApp">
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.12 1.532 5.845L.057 23.27a.75.75 0 0 0 .916.916l5.424-1.475A11.955 11.955 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 0 1-5.017-1.375l-.36-.213-3.724 1.013 1.012-3.724-.213-.36A9.818 9.818 0 0 1 2.182 12C2.182 6.57 6.57 2.182 12 2.182c5.43 0 9.818 4.388 9.818 9.818 0 5.43-4.388 9.818-9.818 9.818z"/>
-  </svg>
+
+<!-- WHATSAPP FLUTUANTE -->
+<a href="https://wa.me/5541988880000?text=Oi%2C+vim+pelo+site.+Gostaria+de+agendar+uma+consulta." target="_blank" class="wa-float" aria-label="Agendar pelo WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.121 1.524 5.86L.057 23.625a.75.75 0 00.918.918l5.765-1.467A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.716 9.716 0 01-5.053-1.413l-.361-.215-3.742.955.972-3.742-.235-.374A9.716 9.716 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
 </a>
- 
+
 <script>
-// Nav scroll
-const navbar = document.getElementById('navbar');
+// Header scroll
+const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 60) navbar.classList.add('scrolled');
-  else navbar.classList.remove('scrolled');
+  header.classList.toggle('scrolled', window.scrollY > 20);
 });
- 
-// FAQ
-function toggleFaq(btn) {
-  const answer = btn.nextElementSibling;
-  const isOpen = answer.classList.contains('open');
-  document.querySelectorAll('.faq-answer.open').forEach(a => a.classList.remove('open'));
-  document.querySelectorAll('.faq-question.active').forEach(b => b.classList.remove('active'));
-  if (!isOpen) {
-    answer.classList.add('open');
-    btn.classList.add('active');
-  }
-}
- 
-// Fade-in observer
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
+
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
   });
+});
+
+// Fade in on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
 }, { threshold: 0.12 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
- 
-// Form submit → WhatsApp
-function enviarFormulario() {
-  const nome = document.getElementById('nome').value.trim();
-  const tel = document.getElementById('telefone').value.trim();
-  const modal = document.getElementById('modalidade').value;
-  const msg = document.getElementById('mensagem').value.trim();
-  if (!nome) { alert('Por favor, informe seu nome.'); return; }
-  let texto = `Olá, Nicoly! Vi seu site e gostaria de agendar uma conversa.\n\nNome: ${nome}`;
-  if (tel) texto += `\nContato: ${tel}`;
-  if (modal) texto += `\nModalidade: ${modal}`;
-  if (msg) texto += `\n\n${msg}`;
-  window.open(`https://wa.me/5541997650119?text=${encodeURIComponent(texto)}`, '_blank');
-}
 </script>
 </body>
 </html>
