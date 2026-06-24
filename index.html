@@ -8,12 +8,10 @@
 <meta property="og:title" content="Guaramed — Medicina que escuta, trata e acompanha | Guaratuba-PR"/>
 <meta property="og:description" content="Clínica médica em Guaratuba com atendimento humanizado, eletrocardiograma no local e agendamento fácil pelo WhatsApp."/>
 <meta property="og:type" content="website"/>
-
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
-
 <style>
 :root {
   --petrol: #1E5C7A;
@@ -36,11 +34,8 @@
   --shadow: 0 4px 16px rgba(30,92,122,.10);
   --shadow-lg: 0 12px 40px rgba(30,92,122,.14);
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
-
 body {
   font-family: 'DM Sans', sans-serif;
   background: var(--bg);
@@ -48,7 +43,6 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
-
 /* ── UTILITIES ── */
 .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 .section { padding: 88px 0; }
@@ -76,7 +70,6 @@ p.section-subtitle { font-size: 17px; color: var(--ink-soft); max-width: 560px; 
 .btn-outline:hover { background: var(--petrol-10); }
 .btn-whatsapp { background: #25D366; color: #fff; box-shadow: 0 4px 16px rgba(37,211,102,.28); }
 .btn-whatsapp:hover { background: #1ebe5a; transform: translateY(-2px); }
-
 /* ── HEADER / NAV ── */
 #header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
@@ -118,69 +111,85 @@ nav a:hover { color: var(--petrol); }
 /* ── HERO ── */
 #hero {
   padding-top: 68px;
-  background: var(--white);
-  position: relative; overflow: hidden;
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background: var(--petrol-dark);
 }
-.hero-bg-shape {
-  position: absolute; right: -80px; top: -60px;
-  width: 620px; height: 620px; border-radius: 50%;
-  background: radial-gradient(circle at 60% 40%, var(--petrol-10) 0%, transparent 70%);
-  pointer-events: none;
+
+/* Full-bleed background image */
+.hero-bg-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
 }
+.hero-bg-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 55%;
+  display: block;
+}
+/* Gradient overlay — darker on left for text readability, fades right */
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(8,28,42,0.90) 0%,
+    rgba(8,28,42,0.72) 42%,
+    rgba(8,28,42,0.38) 68%,
+    rgba(8,28,42,0.15) 100%
+  );
+}
+
 .hero-inner {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
-  min-height: calc(100vh - 68px); padding: 80px 0 60px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - 68px);
+  padding: 80px 0 72px;
+  max-width: 620px;
 }
+
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
   font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
-  color: var(--petrol); margin-bottom: 24px;
+  color: rgba(255,255,255,.80); margin-bottom: 24px;
 }
-.hero-eyebrow::before { content: ''; width: 28px; height: 1.5px; background: var(--petrol); }
+.hero-eyebrow::before { content: ''; width: 28px; height: 1.5px; background: rgba(255,255,255,.55); }
+
 h1.hero-title {
-  font-size: clamp(36px, 5vw, 58px); font-weight: 600; line-height: 1.1;
-  color: var(--ink); margin-bottom: 22px;
+  font-size: clamp(38px, 5.5vw, 62px); font-weight: 600; line-height: 1.08;
+  color: #fff; margin-bottom: 22px;
 }
-h1.hero-title em { font-style: italic; color: var(--petrol); }
-.hero-desc { font-size: 17px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 36px; max-width: 500px; }
+h1.hero-title em { font-style: italic; color: #7dd6f0; }
+
+.hero-desc {
+  font-size: 17px; color: rgba(255,255,255,.78);
+  line-height: 1.72; margin-bottom: 36px; max-width: 480px;
+}
+
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 48px; }
+
+/* Outline button override for dark hero */
+#hero .btn-outline {
+  color: #fff; border-color: rgba(255,255,255,.45);
+  background: transparent;
+}
+#hero .btn-outline:hover {
+  background: rgba(255,255,255,.12);
+  border-color: rgba(255,255,255,.7);
+}
+
 .hero-trust { display: flex; gap: 28px; flex-wrap: wrap; }
-.trust-item { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-soft); font-weight: 500; }
-.trust-item svg { color: var(--petrol); flex-shrink: 0; }
-.hero-visual {
-  position: relative; display: flex; justify-content: center; align-items: center;
+.trust-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: rgba(255,255,255,.70); font-weight: 500;
 }
-.hero-card-main {
-  background: var(--white); border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg); overflow: hidden;
-  width: 100%; max-width: 420px;
-}
-.hero-card-img {
-  width: 100%; height: 320px;
-  background: linear-gradient(135deg, var(--petrol-10) 0%, #d4e8f0 100%);
-  display: flex; align-items: center; justify-content: center;
-  position: relative; overflow: hidden;
-}
-.hero-card-img img { width: 100%; height: 100%; object-fit: cover; }
-.hero-card-placeholder {
-  display: flex; flex-direction: column; align-items: center; gap: 10px;
-  color: var(--petrol); opacity: .45;
-}
-.hero-card-placeholder svg { width: 64px; height: 64px; }
-.hero-card-placeholder span { font-size: 13px; font-weight: 500; }
-.hero-card-body { padding: 22px 24px; }
-.hero-card-name { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 600; color: var(--ink); }
-.hero-card-crm { font-size: 12px; color: var(--petrol); font-weight: 600; margin-top: 2px; }
-.hero-card-spec { font-size: 14px; color: var(--ink-soft); margin-top: 4px; }
-.hero-badge {
-  position: absolute; top: -12px; right: -12px;
-  background: var(--petrol); color: #fff;
-  border-radius: var(--radius); padding: 14px 18px;
-  box-shadow: var(--shadow); font-size: 12px; font-weight: 600;
-  display: flex; flex-direction: column; align-items: center; gap: 2px;
-  min-width: 100px; text-align: center;
-}
-.hero-badge strong { font-size: 22px; font-family: 'Fraunces', serif; }
+.trust-item svg { color: #7dd6f0; flex-shrink: 0; }
 
 /* ── RIBBON ── */
 .ribbon {
@@ -195,7 +204,6 @@ h1.hero-title em { font-style: italic; color: var(--petrol); }
   font-size: 14px; font-weight: 500;
 }
 .ribbon-item svg { opacity: .8; }
-
 /* ── ESPECIALIDADES ── */
 #especialidades { background: var(--white); }
 .spec-grid {
@@ -219,7 +227,6 @@ h1.hero-title em { font-style: italic; color: var(--petrol); }
 .spec-icon svg { color: var(--petrol); }
 .spec-name { font-family: 'Fraunces', serif; font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
 .spec-desc { font-size: 13px; color: var(--ink-soft); line-height: 1.55; }
-
 /* ── DIFERENCIAIS ── */
 #diferenciais { background: var(--bg); }
 .diff-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 48px; }
@@ -237,7 +244,6 @@ h1.hero-title em { font-style: italic; color: var(--petrol); }
 }
 .diff-content h3 { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 600; margin-bottom: 8px; }
 .diff-content p { font-size: 14px; color: var(--ink-soft); line-height: 1.65; }
-
 /* ── MÉDICO ── */
 #medico { background: var(--white); }
 .doctor-wrap {
@@ -275,7 +281,6 @@ h1.hero-title em { font-style: italic; color: var(--petrol); }
 }
 .doctor-attr-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--petrol-10); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .doctor-attr-icon svg { color: var(--petrol); }
-
 /* ── COMO FUNCIONA ── */
 #como-funciona { background: var(--petrol); color: #fff; }
 #como-funciona .tag { color: rgba(255,255,255,.7); background: rgba(255,255,255,.1); }
@@ -300,7 +305,6 @@ h1.hero-title em { font-style: italic; color: var(--petrol); }
 .step-icon { margin-bottom: 16px; }
 .step-title { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; margin-bottom: 8px; }
 .step-desc { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.65; }
-
 /* ── AVALIAÇÕES ── */
 #avaliacoes { background: var(--bg); }
 .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 48px; }
@@ -322,11 +326,6 @@ h1.hero-title em { font-style: italic; color: var(--petrol); }
 .review-name { font-size: 14px; font-weight: 600; color: var(--ink); }
 .review-date { font-size: 12px; color: var(--ink-muted); }
 .reviews-cta { text-align: center; margin-top: 36px; }
-.google-badge {
-  display: inline-flex; align-items: center; gap: 8px;
-  font-size: 13px; color: var(--ink-soft); margin-top: 12px;
-}
-
 /* ── FAQ ── */
 #faq { background: var(--white); }
 .faq-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; margin-top: 48px; align-items: start; }
@@ -352,7 +351,6 @@ h1.hero-title em { font-style: italic; color: var(--petrol); }
   padding: 0 20px;
 }
 .faq-item.open .faq-a { max-height: 200px; padding: 0 20px 18px; }
-
 /* ── LOCALIZAÇÃO ── */
 #localizacao { background: var(--bg); }
 .location-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 40px; margin-top: 48px; align-items: start; }
@@ -375,7 +373,6 @@ h1.hero-title em { font-style: italic; color: var(--petrol); }
   box-shadow: var(--shadow); height: 380px; background: var(--petrol-10);
 }
 .map-frame iframe { width: 100%; height: 100%; border: none; }
-
 /* ── CTA FINAL ── */
 #cta-final {
   background: linear-gradient(135deg, var(--petrol-dark) 0%, var(--petrol-light) 100%);
@@ -386,7 +383,6 @@ h1.hero-title em { font-style: italic; color: var(--petrol); }
 .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 .btn-white { background: #fff; color: var(--petrol); }
 .btn-white:hover { background: var(--petrol-10); }
-
 /* ── FOOTER ── */
 footer {
   background: var(--ink); color: rgba(255,255,255,.6);
@@ -401,7 +397,6 @@ footer {
 .footer-col a:hover { color: #fff; }
 .footer-bottom { padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 12px; }
 .cfm-note { font-size: 11px; color: rgba(255,255,255,.3); max-width: 480px; line-height: 1.6; }
-
 /* ── WHATSAPP FLOAT ── */
 .wa-float {
   position: fixed; bottom: 28px; right: 28px; z-index: 200;
@@ -417,18 +412,15 @@ footer {
   0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,.4); }
   50% { box-shadow: 0 4px 28px rgba(37,211,102,.65); }
 }
-
 /* ── FADE-IN ANIMATION ── */
 .fade-in {
   opacity: 0; transform: translateY(24px);
   transition: opacity .6s ease, transform .6s ease;
 }
 .fade-in.visible { opacity: 1; transform: none; }
-
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; padding: 56px 0 48px; min-height: auto; }
-  .hero-visual { display: none; }
+  .hero-inner { max-width: 100%; padding: 56px 0 48px; }
   .diff-grid { grid-template-columns: 1fr; }
   .steps-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
   .steps-grid::before { display: none; }
@@ -449,9 +441,18 @@ footer {
   .footer-inner { grid-template-columns: 1fr; }
   .ribbon-inner { gap: 20px; }
   .diff-card { flex-direction: column; gap: 8px; }
+  #hero { min-height: auto; }
+  .hero-inner { padding: 48px 0 52px; min-height: calc(100svh - 68px); }
+  h1.hero-title { font-size: 36px; }
+  .hero-bg-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(8,28,42,0.82) 0%,
+      rgba(8,28,42,0.70) 100%
+    );
+  }
 }
 </style>
-
 <!-- JSON-LD -->
 <script type="application/ld+json">
 {
@@ -499,7 +500,6 @@ footer {
 }
 </script>
 </head>
-
 <body>
 
 <!-- HEADER -->
@@ -543,58 +543,40 @@ footer {
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg-shape"></div>
+  <!-- Background: foto da fachada -->
+  <div class="hero-bg-image">
+    <img src="guaramed_frente.PNG" alt="Fachada da Guaramed em Guaratuba-PR"/>
+    <div class="hero-bg-overlay"></div>
+  </div>
+
   <div class="container">
-    <div class="hero-inner">
-      <div class="hero-content fade-in">
-        <div class="hero-eyebrow">Guaratuba · Desde 2018</div>
-        <h1 class="hero-title">
-          Medicina que <em>escuta,</em><br>trata e acompanha.
-        </h1>
-        <p class="hero-desc">
-          Na Guaramed, cada consulta começa com tempo para ouvir você. Diagnóstico cuidadoso, orientação clara e acompanhamento que vai além da receita.
-        </p>
-        <div class="hero-actions">
-          <a href="https://wa.me/5541988880000?text=Oi%2C+vim+pelo+site.+Gostaria+de+agendar+uma+consulta." target="_blank" class="btn btn-whatsapp">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.121 1.524 5.86L.057 23.625a.75.75 0 00.918.918l5.765-1.467A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.716 9.716 0 01-5.053-1.413l-.361-.215-3.742.955.972-3.742-.235-.374A9.716 9.716 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
-            Agendar pelo WhatsApp
-          </a>
-          <a href="#especialidades" class="btn btn-outline">Ver especialidades</a>
-        </div>
-        <div class="hero-trust">
-          <div class="trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Atendimento particular
-          </div>
-          <div class="trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            Aceita Amil
-          </div>
-          <div class="trust-item">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            ECG no local
-          </div>
-        </div>
+    <div class="hero-inner fade-in">
+      <div class="hero-eyebrow">Guaratuba · Desde 2018</div>
+      <h1 class="hero-title">
+        Medicina que <em>escuta,</em><br>trata e acompanha.
+      </h1>
+      <p class="hero-desc">
+        Na Guaramed, cada consulta começa com tempo para ouvir você. Diagnóstico cuidadoso, orientação clara e acompanhamento que vai além da receita.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5541988880000?text=Oi%2C+vim+pelo+site.+Gostaria+de+agendar+uma+consulta." target="_blank" class="btn btn-whatsapp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.554 4.121 1.524 5.86L.057 23.625a.75.75 0 00.918.918l5.765-1.467A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.716 9.716 0 01-5.053-1.413l-.361-.215-3.742.955.972-3.742-.235-.374A9.716 9.716 0 012.25 12c0-5.385 4.365-9.75 9.75-9.75S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+          Agendar pelo WhatsApp
+        </a>
+        <a href="#especialidades" class="btn btn-outline">Ver especialidades</a>
       </div>
-      <div class="hero-visual fade-in" style="transition-delay:.2s">
-        <div style="position:relative">
-          <div class="hero-card-main">
-            <div class="hero-card-img">
-              <div class="hero-card-placeholder">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                <span>Foto do Dr. Marcos</span>
-              </div>
-            </div>
-            <div class="hero-card-body">
-              <div class="hero-card-name">Dr. Marcos Carvalho Garcia</div>
-              <div class="hero-card-crm">CRM-PR 31151 · CRM-SC 26858</div>
-              <div class="hero-card-spec">Clínico Geral · Responsável Técnico</div>
-            </div>
-          </div>
-          <div class="hero-badge">
-            <strong>+6</strong>
-            anos de<br>experiência
-          </div>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Atendimento particular
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          Aceita Amil
+        </div>
+        <div class="trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          ECG no local
         </div>
       </div>
     </div>
@@ -1040,7 +1022,6 @@ const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
   header.classList.toggle('scrolled', window.scrollY > 20);
 });
-
 // Mobile menu
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
@@ -1050,7 +1031,6 @@ hamburger.addEventListener('click', () => {
 mobileMenu.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => mobileMenu.classList.remove('open'));
 });
-
 // FAQ accordion
 document.querySelectorAll('.faq-q').forEach(q => {
   q.addEventListener('click', () => {
@@ -1060,7 +1040,6 @@ document.querySelectorAll('.faq-q').forEach(q => {
     if (!isOpen) item.classList.add('open');
   });
 });
-
 // Fade in on scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
